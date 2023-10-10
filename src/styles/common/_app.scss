@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app-main {
+  .video-on-image-section {
+    @media screen and (max-width:767px) {
+      padding: 0;
+    }
+  }
+
+  .app-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}

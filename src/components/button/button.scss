@@ -1,0 +1,44 @@
+@import '../../styles/common/_spacings';
+@import '../../styles/common/_colors';
+
+.button-container {
+
+  button,
+  a {
+    width: $spacing-9xl;
+    height: $spacing-xxl;
+    padding: $spacing-m;
+    border: none;
+    border-radius: $spacing-m;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width:767px) {
+      width: $spacing-6xl;
+      height: $spacing-3xl;
+      padding: $spacing-s;
+    }
+
+    &.primary {
+      color: $white;
+      background-color: $black;
+
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+
+    &.secondary {
+      background-color: $white;
+      color: $black;
+
+      &:hover {
+        color: $white;
+        background-color: $black;
+      }
+    }
+
+  }
+}

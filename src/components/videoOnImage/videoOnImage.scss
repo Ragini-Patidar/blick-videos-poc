@@ -1,0 +1,67 @@
+@import '../../styles/common/_spacings';
+@import '../../styles/common/_colors';
+
+.image-container {
+  position: relative;
+  padding: $spacing-xl $spacing-m;
+
+  .video-title {
+    border-left: 2px solid $red;
+    padding-left: $spacing-s;
+    position: absolute;
+    top: 20px;
+    color: $white;
+    left: 15px;
+    font-weight: bold;
+  }
+
+  .image-overlay-container {
+    margin-bottom: $spacing-3xl;
+
+    .image-video-overlay {
+      border: 2px solid $white;
+      height: fit-content;
+      width: 100%;
+      margin-top: $spacing-4xl;
+    }
+  }
+
+  .text-container {
+    color: $white;
+    margin-bottom: $spacing-s;
+
+    .image-on-video-text {
+
+      .play-text {
+        background-color: $red;
+        border-radius: $spacing-m;
+        margin-right: $spacing-s;
+        padding: $spacing-xs $spacing-s;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  .text-title {
+    color: $white;
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: $spacing-l;
+  }
+
+  .more-videos {
+    backdrop-filter: blur(10px);
+    background: hsla(0, 0%, 100%, .1);
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    border-radius: 4px;
+    color: $white;
+    font-size: medium;
+    font-weight: 700;
+    padding: $spacing-m;
+    text-align: center;
+  }
+}

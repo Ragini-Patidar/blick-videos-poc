@@ -1,0 +1,75 @@
+@import '../../styles/common/_spacings';
+@import '../../styles/common/_colors';
+
+.image-on-video {
+  position: relative;
+
+  .image-video-container {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+
+    >div {
+      height: inherit;
+    }
+
+    .jw-flag-aspect-mode {
+      min-height: calc(100% - 2rem);
+    }
+  }
+
+  .image-on-video-content {
+    padding: $spacing-xl;
+    z-index: 2;
+    padding-top: $spacing-7xl;
+
+    .now {
+      background-color: $red;
+      color: $white;
+      font-weight: 700;
+      padding: $spacing-xs;
+    }
+
+    .small-image-container {
+      border: 1px solid $white;
+      height: 110px;
+      margin-top: $spacing-7xl;
+      width: 110px;
+    }
+
+    .container-border {
+      border-left: 1px solid $red;
+      border-top: 1px solid $red;
+      margin-top: $spacing-l;
+      padding: $spacing-m;
+
+      .image-on-video-text {
+        color: $white;
+        margin-bottom: $spacing-s;
+
+        .play-text {
+          background-color: $red;
+          border-radius: $spacing-m;
+          margin-right: $spacing-s;
+          padding: $spacing-xs $spacing-s;
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.75rem;
+        }
+
+      }
+
+      .text-title {
+        color: $white;
+        font-size: 28px;
+        font-weight: 800;
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,39 @@
+@import '../../styles/common/_spacings';
+@import '../../styles/common/_colors';
+
+.parent-container {
+  position: relative;
+
+  .background-video {
+    position: relative;
+    // filter: blur(0.5rem);
+  }
+
+  .background-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: transparent;
+    /* Make it transparent */
+    pointer-events: none;
+    /* Ignore clicks on the overlay */
+  }
+
+  .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-overlay {
+    position: relative;
+    width: 70%;
+    height: 70%;
+    border: 2px solid $white;
+  }
+}

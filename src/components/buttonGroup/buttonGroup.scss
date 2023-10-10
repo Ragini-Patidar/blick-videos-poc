@@ -1,0 +1,37 @@
+@import '../../styles/common/_spacings';
+@import '../../styles/common/_colors';
+
+.button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  >* {
+    margin-right: $spacing-xl;
+  }
+
+  &-no-gap {
+    >* {
+      margin-right: 0;
+    }
+  }
+
+  .no-gap {
+    border: 1px solid $black;
+    border-radius: 0;
+  }
+
+  .is-first {
+    border-top-left-radius: $spacing-m;
+    border-bottom-left-radius: $spacing-m;
+    border-right: none;
+  }
+
+
+  .is-last {
+    border-top-right-radius: $spacing-m;
+    border-bottom-right-radius: $spacing-m;
+    border-left: none;
+
+  }
+}
