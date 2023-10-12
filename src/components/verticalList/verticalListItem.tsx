@@ -1,44 +1,42 @@
 import './verticalList.scss';
 import React, { useEffect } from 'react';
-import JWPlayer from '@jwplayer/jwplayer-react';
 import { useInView } from 'react-intersection-observer';
 import { ListProps } from '../carousel';
+import { Video } from '../video';
 
 export interface VerticalListItemProps {
   item: ListProps;
   index: number;
+  selectedIndex: number;
+  updateItem?: any;
 }
 
-export const VerticalListItem = ({item, index}: VerticalListItemProps) => {
-  console.log(item, index);
+export const VerticalListItem = ({item, index, selectedIndex, updateItem}: VerticalListItemProps) => {
 
   const  { ref, inView, entry } = useInView({
-    threshold: 0,
+    threshold: 0.9,
     triggerOnce: false
   });
 
   useEffect(() => {
     if(entry?.isIntersecting && inView) {
-      const videoElement = document.querySelector("video");
-      if(videoElement) {
-        videoElement.pause();
-        videoElement.currentTime = 0;
-        videoElement.autoplay= true;
-      }
+      updateItem(index);
     }
-  }, [inView, entry]);
+  }, [inView, entry, index, updateItem]);
 
   return (
-    <li className={`list-item`} key={index} ref={ref} id={`list-item-${index}`}>
-      <JWPlayer
-        playerId={`video-${index}`}
-        library="https://cdn.jwplayer.com/libraries/mX1HQB9j.js"
-        playlist={item.videoUrl}
-        autostart={true}
-        controls={true}
-        repeat={true}
-        viewability={true}
-      />
+    <li className={`list-item`} ref={ref}>
+      {item.isCurrent && (
+        <Video
+          library="https://cdn.jwplayer.com/libraries/mX1HQB9j.js"
+          playlist={item.videoUrl}
+          config={
+            {
+              autostart: true
+            }
+          }
+         />
+      )}
     </li>
   );
 }

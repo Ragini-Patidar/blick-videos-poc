@@ -15,6 +15,7 @@ export interface ListProps {
   image: string;
   text: string;
   videoUrl: string;
+  isCurrent: boolean;
 }
 
 export interface CarouselProps {
