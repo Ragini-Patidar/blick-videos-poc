@@ -1,8 +1,8 @@
-import './verticalList.scss';
-import React, { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import { ListProps } from '../carousel';
-import { Video } from '../video';
+import "./verticalList.scss";
+import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { ListProps } from "../carousel";
+import { Video } from "../video";
 
 export interface VerticalListItemProps {
   item: ListProps;
@@ -11,18 +11,22 @@ export interface VerticalListItemProps {
   updateItem?: any;
 }
 
-export const VerticalListItem = ({item, index, selectedIndex, updateItem}: VerticalListItemProps) => {
-
-  const  { ref, inView, entry } = useInView({
-    threshold: 0.9,
-    triggerOnce: false
+export const VerticalListItem = ({
+  item,
+  index,
+  selectedIndex,
+  updateItem,
+}: VerticalListItemProps) => {
+  const { ref, inView, entry } = useInView({
+    threshold: 1,
+    triggerOnce: false,
   });
 
   useEffect(() => {
-    if(entry?.isIntersecting && inView) {
+    if (entry?.isIntersecting && inView && !item.isCurrent) {
       updateItem(index);
     }
-  }, [inView, entry, index, updateItem]);
+  }, [inView, entry, index, updateItem, selectedIndex, item.isCurrent]);
 
   return (
     <li className={`list-item`} ref={ref}>
@@ -30,13 +34,11 @@ export const VerticalListItem = ({item, index, selectedIndex, updateItem}: Verti
         <Video
           library="https://cdn.jwplayer.com/libraries/mX1HQB9j.js"
           playlist={item.videoUrl}
-          config={
-            {
-              autostart: true
-            }
-          }
-         />
+          config={{
+            autostart: true,
+          }}
+        />
       )}
     </li>
   );
-}
+};
