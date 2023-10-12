@@ -12,6 +12,7 @@ import { imageOnVideoMock } from "./mocks/components/imageOnVideo";
 import { videoOnVideoMock } from "./mocks/components/videoOnVideo";
 
 import "./styles/_main.scss";
+import { BlickBites } from "./components/blickBites";
 
 const App = () => {
   const [selectedFeature, updateSelectedFeature] = useState<number>(1);
@@ -40,6 +41,10 @@ const App = () => {
             {...imageOnVideoMock}
             foregroundImage={`${process.env.PUBLIC_URL}/assets/itemImage.png`}
           />
+        );
+        case 4:
+        return (
+          <BlickBites/>
         );
       default:
         return <></>;

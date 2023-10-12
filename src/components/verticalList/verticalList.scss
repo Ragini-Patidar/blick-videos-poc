@@ -1,0 +1,43 @@
+
+.vertical-list {
+  background-color: black;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+
+  .list-item {
+    scroll-snap-align: start;
+  }
+  
+  ul {
+    padding: 0;
+    scroll-snap-type: y mandatory;
+    overflow: scroll;
+    height: 100vh;
+    scrollbar-width: none;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  .jwplayer.jw-stretch-uniform .jw-media video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover!important;
+  }
+  
+  .jwplayer.jw-flag-aspect-mode {
+    min-height: 100vh;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .vertical-list {
+    height: 100vh;
+  }
+}

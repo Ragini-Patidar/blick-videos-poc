@@ -1,0 +1,65 @@
+  
+  .slider {
+    text-align: center;
+    background-color: black;
+    padding: 32px 16px;
+  }
+  
+  .carousel-image {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    background-color: white;
+  }
+  
+  .slick-list {
+    overflow: hidden;
+  }
+  
+  .slick-slide {
+    width: 500px!important;
+    padding: 16px;
+  }
+  
+  
+  .slick-track {
+    display: flex;
+    background-color: black;
+  }
+  
+  .slide-container {
+    width: auto!important;
+  }
+  
+  .text-container {
+    margin: 32px 0 16px;
+    color: white;
+    border-top: 2px solid red;
+    border-left: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0 0 12px;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 850;
+  }
+  
+  .slide-text {
+    color: white;
+    text-align: left;
+    margin-top: 12px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 780px) {
+    .slick-slide {
+      width: 200px!important;
+    }
+  
+    .carousel-image {
+      height: 200px;
+      object-fit: cover;
+    }
+  }

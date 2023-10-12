@@ -14,6 +14,10 @@ export const buttonGroupMock: ButtonGroupProps = {
       label: "Image on Video",
       variant: "secondary",
     },
+    {
+      label: "Blick Bites",
+      variant: "secondary",
+    },
   ],
   nogap: true,
 };
