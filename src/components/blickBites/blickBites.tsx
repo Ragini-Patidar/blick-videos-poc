@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Carousel, ListProps } from "../carousel";
 import { VerticalList } from "../verticalList";
 import { blickBitesMocks } from "../../mocks/components/blickBites";
@@ -13,7 +13,7 @@ export const BlickBites = () => {
     setIsClicked(true);
   };
 
-  useEffect(() => {
+  const updateSortedList = useCallback(() => {
     const videoList = [...blickBitesMocks];
     const selectedItem = videoList[selectedIndex];
     if (!!selectedItem) {
@@ -28,6 +28,10 @@ export const BlickBites = () => {
       setSortedList(updatedList);
     }
   }, [selectedIndex]);
+
+  useEffect(() => {
+    updateSortedList();
+  }, [selectedIndex, updateSortedList]);
 
   const updateItem = (index: number) => {
     const tempList = [...sortedList]?.map((li) => ({
